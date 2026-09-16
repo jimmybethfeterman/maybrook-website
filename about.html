@@ -118,10 +118,11 @@
   p:last-child { margin-bottom: 0; }
 
   /* ---------- TEAM ---------- */
-  .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px 28px; margin-top: 24px; }
+  .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 36px 48px; margin-top: 24px; }
   .team-card { padding-top: 22px; border-top: 2px solid var(--navy); }
-  .team-card h3 { font-size: 18px; font-weight: 600; margin-bottom: 5px; line-height: 1.25; }
-  .team-card .role { font-size: 13.5px; color: var(--ink-soft); }
+  .team-card h3 { font-size: 19px; font-weight: 600; margin-bottom: 4px; line-height: 1.25; }
+  .team-card .role { font-size: 13.5px; color: var(--ink-soft); margin-bottom: 12px; }
+  .team-card p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.55; max-width: 42ch; margin: 0; }
 
   /* ---------- CLOSING CTA ---------- */
   section.closing { text-align: center; }
@@ -133,15 +134,12 @@
 
   @media (max-width: 760px) {
     .section-inner { grid-template-columns: 1fr; }
-    .team-grid { grid-template-columns: 1fr 1fr; }
+    .team-grid { grid-template-columns: 1fr; }
     header.page-head {
       background:
         linear-gradient(180deg, rgba(17,29,40,0.82) 0%, rgba(17,29,40,0.78) 100%),
         #111d28 url("story-bg.jpg") center / cover no-repeat;
     }
-  }
-  @media (max-width: 480px) {
-    .team-grid { grid-template-columns: 1fr; }
   }
   :focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
 </style>
@@ -179,6 +177,7 @@
       <div class="team-card">
         <h3>Natan Feterman</h3>
         <div class="role">Founder &amp; President</div>
+        <p>Natan has spent nearly thirty years in the food industry. He immigrated to Miami from Guatemala and built Maybrook Corp from the ground up, becoming an expert in export logistics and distribution, as well as sourcing and pricing.</p>
       </div>
       <div class="team-card">
         <h3>Alex Feterman</h3>
@@ -187,10 +186,12 @@
       <div class="team-card">
         <h3>Jimmy Feterman</h3>
         <div class="role">Data &amp; Business Development</div>
+        <p>Born and raised in Miami, Jimmy graduated from Northwestern University with a degree in economics, then earned a master's in data science. He spent nine years in tech as a data scientist before joining his father and uncle to expand the business and build data products that improve how it runs.</p>
       </div>
       <div class="team-card">
         <h3>Olivia Templeman</h3>
         <div class="role">Outbound Sales</div>
+        <p>Olivia is originally from Australia, where she spent six years working as an investor analyzing and improving businesses. She now leads our sales efforts.</p>
       </div>
     </div>
   </div>
