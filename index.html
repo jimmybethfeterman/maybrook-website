@@ -1,0 +1,482 @@
+<!--
+  DESIGN NOTES: mature, professional B2B look inspired by carimexa.com:
+  clean white page, generous whitespace, hairline-separated sections,
+  a single deep-navy accent, a serif for headings and a grotesque sans
+  for body. Committed to a single light theme on purpose.
+
+  Color (light only):
+    --navy       #1C3D5A   buttons, links, eyebrow labels, accent numbers, diagram
+    --navy-deep  #14293D   hover state
+    --ink        #1B2733   headings / body text
+    --ink-soft   #5A6672   secondary text
+    --paper      #FFFFFF   main page ground
+    --paper-warm #F7F5F1   stat cards, photo frame, quiet blocks
+    --line       #E5E2DB   hairlines / borders
+
+  Type: Source Serif 4 (600/700) headings · Public Sans (400/500/600/700) body
+
+  HERO BANNER: hero-banner.jpg (container ships at berth). It's a full-bleed
+  background image behind a navy scrim. To swap it, replace the file or change
+  the url() in `header.hero` below. Use a wide image (~2400x1200).
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Maybrook Corp</title>
+<meta name="description" content="Maybrook Corp: family-owned food sourcing and distribution company, moving product between suppliers and buyers worldwide since 1997.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600;700&family=Public+Sans:wght@400;500;600;700&display=swap">
+<style>
+  :root {
+    --navy: #1C3D5A;
+    --navy-deep: #14293D;
+    --ink: #1B2733;
+    --ink-soft: #5A6672;
+    --paper: #FFFFFF;
+    --paper-warm: #F7F5F1;
+    --line: #E5E2DB;
+    color-scheme: light;
+  }
+  /* Single light theme by design; the page stays white regardless of
+     the viewer's system or browser dark-mode setting. */
+
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 16.5px;
+    line-height: 1.62;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1, h2, h3 {
+    font-family: "Source Serif 4", Georgia, "Times New Roman", serif;
+    font-weight: 600;
+    text-wrap: balance;
+    margin: 0;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  a { color: var(--navy); }
+  .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+  .eyebrow {
+    font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.13em;
+    color: var(--navy); margin: 0 0 14px;
+  }
+
+  /* ---------- NAV ---------- */
+  nav.top { background: var(--paper); border-bottom: 1px solid var(--line); }
+  nav.top .wrap { display: flex; align-items: center; justify-content: space-between; padding: 20px 28px; gap: 20px; flex-wrap: wrap; }
+  .brand { display: flex; align-items: center; text-decoration: none; }
+  .brand-text .word { font-family: "Source Serif 4", Georgia, serif; font-weight: 700; font-size: 20px; color: var(--ink); line-height: 1; letter-spacing: 0; }
+  .brand-text .brand-sub { display: block; font-size: 11.5px; color: var(--ink-soft); margin-top: 4px; letter-spacing: 0.01em; }
+  .navlinks { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; }
+  .navlink {
+    font-size: 14.5px; font-weight: 600; text-decoration: none; color: var(--ink);
+  }
+  .navlink:hover { color: var(--navy); }
+  .pill {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 14px; font-weight: 600; text-decoration: none;
+    padding: 11px 22px; border-radius: 6px; border: none;
+    background: var(--navy); color: #FFFFFF;
+  }
+  .pill:hover { background: var(--navy-deep); }
+  .pill.lg { padding: 15px 28px; font-size: 15px; }
+  .pill.ghost { background: transparent; color: var(--navy); box-shadow: inset 0 0 0 1.5px var(--navy); }
+  .pill.ghost:hover { background: var(--paper-warm); }
+  .pill.ghost svg { width: 16px; height: 16px; }
+
+  /* ---------- HERO BANNER ---------- */
+  header.hero {
+    position: relative;
+    min-height: clamp(440px, 62vh, 600px);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: clamp(48px, 9vh, 96px) 24px clamp(48px, 9vh, 96px) clamp(24px, 8vw, 132px);
+    border-bottom: 1px solid var(--line);
+    background:
+      linear-gradient(92deg, rgba(17,29,40,0.88) 0%, rgba(17,29,40,0.68) 44%, rgba(17,29,40,0.34) 100%),
+      #111d28 url("hero-banner.jpg") center / cover no-repeat;
+    color: #FFFFFF;
+  }
+  .hero-inner { width: 100%; max-width: 600px; min-width: 0; }
+  header.hero .eyebrow { color: #9DB6CC; }
+  h1.headline {
+    font-family: "Source Serif 4", Georgia, serif;
+    font-weight: 600;
+    font-size: clamp(32px, 4vw, 46px);
+    line-height: 1.14;
+    color: #FFFFFF;
+    margin: 0 0 22px;
+    letter-spacing: -0.01em;
+  }
+  header.hero .subhead {
+    font-size: 17.5px;
+    line-height: 1.5;
+    color: rgba(255,255,255,0.82);
+    max-width: 42ch;
+    margin: 0 0 34px;
+  }
+
+  .hero-cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    color: #FFFFFF; text-decoration: none;
+    font-size: 15px; font-weight: 600; letter-spacing: 0.02em;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(255,255,255,0.5);
+  }
+  .hero-cta .arrow { transition: transform 0.15s ease; }
+  .hero-cta:hover { border-bottom-color: #FFFFFF; }
+  .hero-cta:hover .arrow { transform: translateX(3px); }
+
+  /* ---------- SECTIONS ---------- */
+  section { padding: 62px 0; border-top: 1px solid var(--line); }
+  .section-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: start; }
+  .section-inner.narrow-copy p { max-width: 52ch; }
+  h2.h2 { font-size: 30px; font-weight: 600; margin-bottom: 16px; line-height: 1.2; }
+  .lede { color: var(--ink-soft); font-size: 16.5px; }
+  p { margin: 0 0 14px; }
+  p:last-child { margin-bottom: 0; }
+
+  .fact-row { display: flex; gap: 34px; margin-top: 26px; flex-wrap: wrap; }
+  .fact .n { font-family: "Source Serif 4", Georgia, serif; font-weight: 700; font-size: 25px; color: var(--navy); }
+  .fact .l { font-size: 12px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.07em; }
+
+  /* ---------- COLOUR BAND (Footprint) ---------- */
+  section.band {
+    border-top: none;
+    color: #FFFFFF;
+    background: #3C4F5E;
+  }
+  .band .eyebrow { color: #A9BDCB; }
+  .band h2.h2 { color: #FFFFFF; }
+  .band p { color: rgba(255,255,255,0.78); }
+  .band .fact .n { color: #FFFFFF; }
+  .band .fact .l { color: rgba(255,255,255,0.58); }
+
+  .source-kicker { font-size: 12px; font-weight: 700; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 10px; }
+  .source-list { list-style: none; margin: 0; padding: 0; }
+  .source-list li {
+    padding: 13px 0;
+    border-top: 1px solid var(--line);
+    font-size: 15px; line-height: 1.4; color: var(--ink);
+  }
+  .source-list li:last-child { border-bottom: 1px solid var(--line); }
+  .source-list li span { color: var(--ink-soft); }
+
+  .brand-strip { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--ink-soft); }
+  .brand-strip strong { color: var(--ink); }
+
+  .capabilities { display: grid; grid-template-columns: 1fr 1fr; gap: 34px 48px; margin-top: 14px; }
+  .capability { padding-top: 24px; border-top: 2px solid var(--navy); }
+  .capability h3 { font-size: 19px; font-weight: 600; margin-bottom: 8px; }
+  .capability p { font-size: 15px; color: var(--ink-soft); max-width: 44ch; }
+
+  .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 12px; }
+  .service-col h3 { font-size: 20px; font-weight: 600; margin-bottom: 6px; }
+  .service-col .sub { color: var(--ink-soft); font-size: 14px; margin-bottom: 18px; }
+  .service-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; }
+  .service-list li { padding: 14px 0; border-top: 1px solid var(--line); font-size: 15px; display: flex; gap: 12px; align-items: flex-start; }
+  .service-list li:last-child { border-bottom: 1px solid var(--line); }
+  .service-list li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--navy); margin-top: 8px; flex-shrink: 0; }
+
+  section.closing { text-align: center; }
+  section.closing h2 { max-width: 26ch; margin: 0 auto 14px; }
+  section.closing > .wrap > p { max-width: 46ch; margin: 0 auto 26px; color: var(--ink-soft); }
+
+  .contact-form { text-align: left; max-width: 640px; margin: 8px auto 0; display: flex; flex-direction: column; gap: 18px; }
+  .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .field { display: flex; flex-direction: column; gap: 7px; }
+  .field span { font-size: 12px; font-weight: 700; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.06em; }
+  .field input, .field textarea {
+    font-family: "Public Sans", sans-serif; font-size: 15px; color: var(--ink);
+    padding: 12px 14px; border: 1px solid var(--line); border-radius: 6px;
+    background: var(--paper); width: 100%;
+  }
+  .field textarea { resize: vertical; }
+  .field input:focus, .field textarea:focus { outline: none; border-color: var(--navy); }
+  .contact-form button.pill { align-self: flex-start; border: none; cursor: pointer; font: inherit; }
+  .contact-form button.pill:disabled { opacity: 0.6; cursor: default; }
+  .form-note { font-size: 12.5px; color: var(--ink-soft); margin: 0; }
+
+  .form-success {
+    display: flex; align-items: flex-start; gap: 14px;
+    max-width: 640px; margin: 8px auto 0; text-align: left;
+    padding: 20px 22px; border: 1px solid var(--line); border-radius: 8px;
+    background: var(--paper-warm);
+  }
+  .form-success svg { width: 22px; height: 22px; color: var(--navy); flex-shrink: 0; margin-top: 2px; }
+  .form-success-title { margin: 0; font-family: "Source Serif 4", Georgia, serif; font-weight: 600; font-size: 17px; color: var(--ink); }
+  .form-success-sub { margin: 4px 0 0; font-size: 14px; color: var(--ink-soft); }
+
+  .contact-actions { display: flex; flex-direction: column; gap: 12px; }
+  .contact-actions .pill { justify-content: center; }
+
+  footer { padding: 28px 0; background: var(--paper-warm); border-top: 1px solid var(--line); }
+  footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: 12.5px; color: var(--ink-soft); }
+
+  @media (max-width: 760px) {
+    .section-inner, .services-grid, .capabilities, .form-grid { grid-template-columns: 1fr; }
+    header.hero {
+      min-height: 0;
+      background:
+        linear-gradient(180deg, rgba(17,29,40,0.80) 0%, rgba(17,29,40,0.72) 100%),
+        #111d28 url("hero-banner.jpg") center / cover no-repeat;
+    }
+  }
+  :focus-visible { outline: 2px solid var(--navy); outline-offset: 2px; }
+</style>
+</head>
+<body>
+
+<nav class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">
+      <span class="brand-text">
+        <span class="word">Maybrook Corp</span>
+      </span>
+    </a>
+    <div class="navlinks">
+      <a class="navlink" href="about.html">About</a>
+      <a class="pill" href="#contact">Contact Us</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <h1 class="headline">Global food sourcing &amp; distribution.</h1>
+    <p class="subhead">Your trusted, family&#8209;owned partner since 1997.</p>
+    <a class="hero-cta" href="#contact">Let's work together <span class="arrow" aria-hidden="true">&rarr;</span></a>
+  </div>
+</header>
+
+<section id="who-we-are">
+  <div class="wrap section-inner narrow-copy">
+    <div>
+      <p class="eyebrow">Who We Are</p>
+      <h2 class="h2">Nearly three decades of sourcing and distributing food globally.</h2>
+    </div>
+    <div>
+      <p>Maybrook Corp is a family-owned business founded in 1997. We source and consolidate food products from suppliers around the world, then deliver them at industrial-scale pricing to the manufacturers and distributors who need volume, not just product.</p>
+      <p>What started as a family operation now moves product between suppliers and buyers on several continents.</p>
+      <div class="fact-row">
+        <div class="fact"><div class="n">1997</div><div class="l">Founded</div></div>
+        <div class="fact"><div class="n">Family</div><div class="l">Owned &amp; operated</div></div>
+        <div class="fact"><div class="n">Worldwide</div><div class="l">Suppliers &amp; buyers</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="what-we-do">
+  <div class="wrap">
+    <p class="eyebrow">What We Do</p>
+    <h2 class="h2" style="max-width:24ch;">Our lines of business.</h2>
+    <div class="capabilities">
+      <div class="capability">
+        <h3>Commercial representation</h3>
+        <p>We act as the commercial team for producers in Asia, Europe, and the Americas, carrying their line into new markets and running the account day to day, alongside our own sales of raw materials in bulk to distributors and industrial manufacturers.</p>
+      </div>
+      <div class="capability">
+        <h3>Private-label development</h3>
+        <p>We partner with manufacturers to private label their products, handling the recipe, format, and packaging for retailers and brands that want their own label.</p>
+      </div>
+      <div class="capability">
+        <h3>Quality, compliance &amp; logistics</h3>
+        <p>Inspection at origin, export and import documentation, and regulatory clearance handled country by country, plus booking, consolidation, and shipment tracking direct from the plant to customers in every country we serve.</p>
+      </div>
+      <div class="capability">
+        <h3>Distribution in Latin America</h3>
+        <p>We run our own distribution in Latin America, alongside established structures that support independent distributors with product, pricing, and the brands we represent.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="footprint" class="band">
+  <div class="wrap section-inner narrow-copy">
+    <div>
+      <p class="eyebrow">Footprint</p>
+      <h2 class="h2">Based in Miami, trading worldwide.</h2>
+    </div>
+    <div>
+      <p>Our office is in Miami and we source and sell across markets worldwide. In Latin America we also run established distribution structures that handle distribution into the region and support independent distributors with product, pricing, and the brands we represent.</p>
+      <div class="fact-row">
+        <div class="fact"><div class="n">Miami</div><div class="l">Head office</div></div>
+        <div class="fact"><div class="n">Worldwide</div><div class="l">Sourcing &amp; sales</div></div>
+        <div class="fact"><div class="n">Latin America</div><div class="l">Distribution network</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="what-we-source">
+  <div class="wrap section-inner narrow-copy">
+    <div>
+      <p class="eyebrow">What We Source</p>
+      <h2 class="h2">What we buy and sell.</h2>
+      <p>We supply the food industry, from snack makers to bakeries, with raw commodity ingredients through finished retail grocery, along with the packaging and industrial supplies that move with them. We work directly with growers, processors, and brand owners on long-term supply agreements.</p>
+    </div>
+    <div>
+      <p class="source-kicker">Some of our product categories</p>
+      <ul class="source-list">
+        <li>Nuts <span>(almonds, macadamias, walnuts &amp; more)</span></li>
+        <li>Dried fruit</li>
+        <li>Spices &amp; edible seeds <span>(sesame, chia &amp; more)</span></li>
+        <li>Fats &amp; oils <span>(palm oil, margarine, shortening &amp; vegetable oils)</span></li>
+        <li>Packaging &amp; industrial supplies <span>(plastic drums, pails, containers)</span></li>
+        <li>Condiments &amp; sauces</li>
+        <li>Packaged &amp; pantry grocery</li>
+        <li>Homeware <span>(wholesale electric fans, by the container)</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <p class="eyebrow">Who We Help</p>
+    <h2 class="h2" style="max-width:30ch; margin-bottom:36px;">Your gateway to markets you don't reach yet.</h2>
+    <div class="services-grid">
+      <div class="service-col">
+        <h3>For Brands &amp; Manufacturers</h3>
+        <div class="sub">Reach new markets using our network.</div>
+        <ul class="service-list">
+          <li>Distribution &amp; sales representation in your target markets</li>
+          <li>Buyer and distributor introductions</li>
+          <li>Consolidated shipping &amp; logistics coordination</li>
+          <li>Customs &amp; import compliance support</li>
+          <li>Market entry strategy for new categories</li>
+        </ul>
+      </div>
+      <div class="service-col">
+        <h3>For Buyers &amp; Distributors</h3>
+        <div class="sub">Consistent volume, industrial pricing, one point of contact.</div>
+        <ul class="service-list">
+          <li>Sourcing of consumer &amp; industrial food products</li>
+          <li>Supplier vetting and category matching</li>
+          <li>Consolidated ordering across multiple brands</li>
+          <li>Ongoing purchasing &amp; account support</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="closing" id="contact">
+  <div class="wrap">
+    <p class="eyebrow">Contact</p>
+    <h2 class="h2">Let's build something together.</h2>
+    <p>If you're a brand looking to reach new markets, or a buyer looking for a reliable supply partner, we'd like to hear from you.</p>
+
+    <form class="contact-form" id="contactForm">
+      <div class="form-grid">
+        <label class="field">
+          <span>Name</span>
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
+        <label class="field">
+          <span>Email</span>
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
+      </div>
+      <label class="field">
+        <span>Subject</span>
+        <input type="text" name="subject" required>
+      </label>
+      <label class="field">
+        <span>Message</span>
+        <textarea name="message" rows="4"></textarea>
+      </label>
+      <button type="submit" class="pill lg">Send Message &nbsp;&rarr;</button>
+      <p class="form-note">We&rsquo;ll get back to you within a day or two.</p>
+    </form>
+
+    <div class="form-success" id="formSuccess" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
+      <div>
+        <p class="form-success-title">Message sent.</p>
+        <p class="form-success-sub">Thanks for reaching out, we&rsquo;ll get back to you within a day or two.</p>
+      </div>
+    </div>
+
+    <div class="contact-actions" style="margin-top:32px; align-items:center;">
+      <a class="pill lg ghost" href="https://wa.me/13054694349?text=Hi%20Maybrook%20Corp%2C%20I%27d%20like%20to%20talk%20about%20distribution." target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 2.1.55 4.06 1.6 5.8L2 22l4.42-1.7a9.9 9.9 0 0 0 5.62 1.72h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2Zm0 1.8c2.16 0 4.19.84 5.72 2.37a8.06 8.06 0 0 1 2.37 5.74c0 4.47-3.64 8.11-8.11 8.11a8.1 8.1 0 0 1-4.65-1.46l-.33-.22-2.62 1 1.02-2.56-.22-.34a8.02 8.02 0 0 1-1.24-4.3c0-4.47 3.64-8.11 8.11-8.11ZM8.53 7.33c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.02 0 1.19.87 2.34.99 2.5.12.16 1.7 2.6 4.13 3.64.58.25 1.03.4 1.38.51.58.19 1.11.16 1.53.1.47-.07 1.43-.58 1.63-1.15.2-.57.2-1.05.14-1.15-.06-.1-.22-.16-.46-.28-.24-.12-1.43-.7-1.65-.79-.22-.08-.38-.12-.54.12-.16.24-.62.79-.76.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.47-.4-.4-.54-.41-.14 0-.3-.01-.46-.01Z"/></svg>
+        Message on WhatsApp
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>Maybrook Corp &middot; Est. 1997</span>
+    <span>maybrookcorp.com</span>
+  </div>
+</footer>
+
+<script>
+  // ── Contact form ─────────────────────────────────────────────────────
+  // Submits to Formspree (https://formspree.io) so messages land directly
+  // in jimmy@maybrookcorp.com without opening the visitor's email app.
+  // If this endpoint ever needs to change, swap it for the new one from
+  // your Formspree dashboard; the mailto: fallback below still kicks in
+  // automatically if the request ever fails.
+  var FORMSPREE_ENDPOINT = 'https://formspree.io/f/mzebnjpe';
+
+  document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var f = e.target;
+    var button = f.querySelector('button[type="submit"]');
+    var success = document.getElementById('formSuccess');
+    var originalLabel = button.innerHTML;
+
+    function mailtoFallback() {
+      var body = 'Name: ' + f.name.value.trim() + '\nEmail: ' + f.email.value.trim() + '\n\n' + f.message.value.trim();
+      window.location.href = 'mailto:jimmy@maybrookcorp.com'
+        + '?subject=' + encodeURIComponent(f.subject.value.trim() || 'Website inquiry')
+        + '&body=' + encodeURIComponent(body);
+    }
+
+    if (FORMSPREE_ENDPOINT.indexOf('YOUR_FORM_ID') !== -1) {
+      mailtoFallback();
+      return;
+    }
+
+    button.disabled = true;
+    button.textContent = 'Sending…';
+
+    fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      body: new FormData(f),
+      headers: { Accept: 'application/json' }
+    })
+      .then(function (res) {
+        if (res.ok) {
+          f.reset();
+          f.hidden = true;
+          success.hidden = false;
+          success.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } else {
+          mailtoFallback();
+        }
+      })
+      .catch(mailtoFallback)
+      .finally(function () {
+        button.disabled = false;
+        button.innerHTML = originalLabel;
+      });
+  });
+</script>
+
+</body>
+</html>
