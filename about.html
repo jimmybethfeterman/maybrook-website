@@ -61,6 +61,7 @@
   a { color: var(--navy); }
   .wrap { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
   .eyebrow {
+    font-family: "Public Sans", sans-serif;
     font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.13em;
     color: var(--navy); margin: 0 0 14px;
   }
@@ -86,7 +87,6 @@
 
   /* ---------- PAGE HEADER ---------- */
   header.page-head { padding: 64px 0 8px; }
-  header.page-head h1 { font-size: clamp(30px, 4vw, 42px); line-height: 1.15; margin: 0 0 18px; max-width: 20ch; }
   header.page-head p { color: var(--ink-soft); font-size: 17px; max-width: 56ch; margin: 0; }
 
   /* ---------- SECTIONS ---------- */
@@ -112,6 +112,7 @@
   .band p { color: rgba(255,255,255,0.78); }
   .band .fact .n { color: #FFFFFF; }
   .band .fact .l { color: rgba(255,255,255,0.58); }
+  .band-story { font-size: 20px; line-height: 1.6; color: #FFFFFF; max-width: 62ch; margin: 0; }
 
   /* ---------- TEAM ---------- */
   .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px 28px; margin-top: 24px; }
@@ -156,8 +157,7 @@
 
 <header class="page-head">
   <div class="wrap">
-    <p class="eyebrow">About Us</p>
-    <h1>Three generations, one family business.</h1>
+    <h1 class="eyebrow">Our Story</h1>
     <p>Maybrook Corp is a family-owned wholesale company built over nearly three decades of sourcing and distributing products worldwide. We stay a small, hands-on team on purpose, and the people below are the ones you'll actually talk to.</p>
   </div>
 </header>
@@ -188,18 +188,12 @@
 </section>
 
 <section id="story" class="band">
-  <div class="wrap section-inner narrow-copy">
-    <div>
-      <p class="eyebrow">Our Story</p>
-      <h2 class="h2">Founded in 1997, still family-run.</h2>
-    </div>
-    <div>
-      <p>Maybrook Corp was founded by Natan Feterman in 1997 and has stayed family-owned and operated ever since. What started as a family operation now moves food and homeware products between suppliers and buyers on several continents, out of our office in Miami.</p>
-      <div class="fact-row">
-        <div class="fact"><div class="n">1997</div><div class="l">Founded</div></div>
-        <div class="fact"><div class="n">Family</div><div class="l">Owned &amp; operated</div></div>
-        <div class="fact"><div class="n">Miami</div><div class="l">Head office</div></div>
-      </div>
+  <div class="wrap">
+    <p class="band-story">Maybrook Corp was founded by Natan Feterman in 1997 and has stayed family-owned and operated ever since. What started as a family operation now moves food and homeware products between suppliers and buyers on several continents, out of our office in Miami.</p>
+    <div class="fact-row">
+      <div class="fact"><div class="n">1997</div><div class="l">Founded</div></div>
+      <div class="fact"><div class="n">Family</div><div class="l">Owned &amp; operated</div></div>
+      <div class="fact"><div class="n">Miami</div><div class="l">Head office</div></div>
     </div>
   </div>
 </section>
