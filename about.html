@@ -86,8 +86,25 @@
   .pill.lg { padding: 15px 28px; font-size: 15px; }
 
   /* ---------- PAGE HEADER ---------- */
-  header.page-head { padding: 64px 0 8px; }
-  header.page-head p { color: var(--ink-soft); font-size: 17px; max-width: 56ch; margin: 0; }
+  header.page-head {
+    padding: 76px 0;
+    color: #FFFFFF;
+    background: #3C4F5E;
+  }
+  header.page-head h1 {
+    font-size: clamp(30px, 4vw, 42px);
+    line-height: 1.15;
+    margin: 0 0 18px;
+    max-width: 22ch;
+    color: #FFFFFF;
+  }
+  header.page-head p {
+    color: rgba(255,255,255,0.82);
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 60ch;
+    margin: 0;
+  }
 
   /* ---------- SECTIONS ---------- */
   section { padding: 56px 0; border-top: 1px solid var(--line); }
@@ -96,23 +113,6 @@
   h2.h2 { font-size: 28px; font-weight: 600; margin-bottom: 16px; line-height: 1.2; }
   p { margin: 0 0 14px; }
   p:last-child { margin-bottom: 0; }
-
-  .fact-row { display: flex; gap: 34px; margin-top: 26px; flex-wrap: wrap; }
-  .fact .n { font-family: "Source Serif 4", Georgia, serif; font-weight: 700; font-size: 25px; color: var(--navy); }
-  .fact .l { font-size: 12px; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.07em; }
-
-  /* ---------- COLOUR BAND ---------- */
-  section.band {
-    border-top: none;
-    color: #FFFFFF;
-    background: #3C4F5E;
-  }
-  .band .eyebrow { color: #A9BDCB; }
-  .band h2.h2 { color: #FFFFFF; }
-  .band p { color: rgba(255,255,255,0.78); }
-  .band .fact .n { color: #FFFFFF; }
-  .band .fact .l { color: rgba(255,255,255,0.58); }
-  .band-story { font-size: 20px; line-height: 1.6; color: #FFFFFF; max-width: 62ch; margin: 0; }
 
   /* ---------- TEAM ---------- */
   .team-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px 28px; margin-top: 24px; }
@@ -157,8 +157,8 @@
 
 <header class="page-head">
   <div class="wrap">
-    <h1 class="eyebrow">Our Story</h1>
-    <p>Maybrook Corp is a family-owned wholesale company built over nearly three decades of sourcing and distributing products worldwide. We stay a small, hands-on team on purpose, and the people below are the ones you'll actually talk to.</p>
+    <h1>Our Story</h1>
+    <p>Maybrook Corp was founded by Natan Feterman in 1997 and has stayed family-owned and operated ever since. What started as a family operation now moves food and homeware products between suppliers and buyers on several continents, out of our office in Miami. We stay a small, hands-on team on purpose, and the people below are the ones you'll actually talk to.</p>
   </div>
 </header>
 
@@ -183,17 +183,6 @@
         <h3>Olivia Templeman</h3>
         <div class="role">Outbound Sales</div>
       </div>
-    </div>
-  </div>
-</section>
-
-<section id="story" class="band">
-  <div class="wrap">
-    <p class="band-story">Maybrook Corp was founded by Natan Feterman in 1997 and has stayed family-owned and operated ever since. What started as a family operation now moves food and homeware products between suppliers and buyers on several continents, out of our office in Miami.</p>
-    <div class="fact-row">
-      <div class="fact"><div class="n">1997</div><div class="l">Founded</div></div>
-      <div class="fact"><div class="n">Family</div><div class="l">Owned &amp; operated</div></div>
-      <div class="fact"><div class="n">Miami</div><div class="l">Head office</div></div>
     </div>
   </div>
 </section>
