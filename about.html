@@ -89,7 +89,9 @@
   header.page-head {
     padding: 76px 0;
     color: #FFFFFF;
-    background: #3C4F5E;
+    background:
+      linear-gradient(92deg, rgba(17,29,40,0.88) 0%, rgba(17,29,40,0.68) 44%, rgba(17,29,40,0.34) 100%),
+      #111d28 url("story-bg.jpg") center / cover no-repeat;
   }
   header.page-head h1 {
     font-size: clamp(30px, 4vw, 42px);
@@ -132,6 +134,11 @@
   @media (max-width: 760px) {
     .section-inner { grid-template-columns: 1fr; }
     .team-grid { grid-template-columns: 1fr 1fr; }
+    header.page-head {
+      background:
+        linear-gradient(180deg, rgba(17,29,40,0.82) 0%, rgba(17,29,40,0.78) 100%),
+        #111d28 url("story-bg.jpg") center / cover no-repeat;
+    }
   }
   @media (max-width: 480px) {
     .team-grid { grid-template-columns: 1fr; }
