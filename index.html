@@ -164,11 +164,14 @@
   .source-kicker { font-size: 12px; font-weight: 700; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.08em; margin: 0 0 10px; }
   .source-list { list-style: none; margin: 0; padding: 0; }
   .source-list li {
-    padding: 13px 0;
-    border-top: 1px solid var(--line);
+    position: relative;
+    padding: 8px 0 8px 20px;
     font-size: 15px; line-height: 1.4; color: var(--ink);
   }
-  .source-list li:last-child { border-bottom: 1px solid var(--line); }
+  .source-list li::before {
+    content: ""; position: absolute; left: 0; top: 16px;
+    width: 6px; height: 6px; border-radius: 50%; background: var(--navy);
+  }
   .source-list li span { color: var(--ink-soft); }
 
   .brand-strip { margin-top: 26px; padding-top: 22px; border-top: 1px solid var(--line); font-size: 14.5px; color: var(--ink-soft); }
